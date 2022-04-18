@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "manager.h"
 //#define DEBUG
 #define DPRINT printf
@@ -116,7 +117,7 @@ int loadData(Product *p){
 	return i;
 }
 
-void searchName(Score *p, int count){
+void searchName(Product *p, int count){
 	int scnt = 0;
 	char search[20];
 
@@ -124,9 +125,9 @@ void searchName(Score *p, int count){
 	scanf(" %[^\n]s", search);
 
 	for(int i = 0; i < count; i++){
-		if(strstr(s[i].name, search)){
-			readProduct(s[i], i + 1);
-			scnr++;
+		if(strstr(p[i].name, search)){
+			readProduct(p, i + 1);
+			scnt++;
 		}
 	}
 

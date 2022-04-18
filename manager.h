@@ -13,5 +13,6 @@ void readProduct(Product *, int);
 void updateProduct(Product *, int);
 void deleteProduct(Product *, int);
 void saveData(Product *, int);
-Product* loadData(Product *);
+int loadData(Product *);
+void searchName(Product *, int);
 int selectMenu();
