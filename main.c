@@ -32,7 +32,7 @@ int main(){
 		}
 
 		else if(menu == 6){
-			searchName(s, count);
+			//searchName(p, count);
 		}
 	}
 	printf("종료됨!\n");
