@@ -116,6 +116,26 @@ int loadData(Product *p){
 	return i;
 }
 
+void searchName(Score *p, int count){
+	int scnt = 0;
+	char search[20];
+
+	printf("검색할 이름? ");
+	scanf(" %[^\n]s", search);
+
+	for(int i = 0; i < count; i++){
+		if(strstr(s[i].name, search)){
+			readProduct(s[i], i + 1);
+			scnr++;
+		}
+	}
+
+	if(scnt == 0){
+		printf("\n=> 검색된 데이터 없음!\n");
+	}
+}
+
+
 int selectMenu(){
 	int menu;
 	printf("\n***Product***\n");
