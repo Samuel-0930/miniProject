@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -W -Wall
 TARGET = product
-DTARGET = product_debug
+DTARGET = product_dubug
 OBJECTS = main.c manager.o
 $(TARGET) : $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^
