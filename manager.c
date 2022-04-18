@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "manager.h"
-#define DEBUG
+//#define DEBUG
 #define DPRINT printf
 
 void addProduct(Product *p, int n){
@@ -84,14 +84,14 @@ void saveData(Product *p, int count){
 	fp = fopen("product.txt","wt");
 	
 	for(int i = 0; i < count; i++){
-	fprintf(fp, "%s %s %s %d %d\n", p[i].name, p[i].script, p[i]weight, p[i].price, p[i].delivery);
+	fprintf(fp, "%s %s %s %d %d\n", p[i].name, p[i].script, p[i].weight, p[i].price, p[i].delivery);
 	}
 	
 	fclose(fp);
 	printf("\n=> 저장됨!");
 }
 
-Product* loadData(Product *p){
+int loadData(Product *p){
 	int i = 0;
 	FILE *fp;
 	if((fp = fopen("product.txt","rt"))){
@@ -123,6 +123,7 @@ int selectMenu(){
 	printf("2. 추가\n");
 	printf("3. 수정\n");
 	printf("4. 삭제\n");
+	printf("5. 저장\n");
 	printf("0. 종료\n");
 	printf("=> 원하는 메뉴는? ");
 	scanf("%d", &menu);
